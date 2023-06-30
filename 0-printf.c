@@ -9,24 +9,12 @@
 */
 int _strlen(const char *s)
 {
-	int i = 0;
-
-	while (1 == 1)
-	{
-		if (*(s + i) != '\0')
-		{
-			i += 1;
-		}
-		else
-		{
-			break;
-		}
-	}
-	return (i);
+	int res;
+	
+	while (s[res])
+		res++;
+	return (res);
 }
-
-
-
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
@@ -37,6 +25,24 @@ int _strlen(const char *s)
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
+}
+
+/**
+ * _puts - this function prints a str
+ *@str: this parameter is the str
+ * Return: size of str.
+*/
+int _puts(const char *str)
+{
+	int size;
+
+	size = 0;
+	while (str[size] != '\0')
+	{
+		_putchar(str[size]);
+		size++;
+	}
+	return (size);
 }
 
 /* betty style doc for function main goes there */
@@ -50,7 +56,7 @@ int _printf(const char *format, ...)
 	int res, j, status;
 	va_list ap;
 	char c, *s;
-	int l, i;
+	int l, i, int_c;
 
 	status = 0;
 	l = _strlen(format);
@@ -62,7 +68,9 @@ int _printf(const char *format, ...)
 		if (status == 0)
 		{
 			if (c == '%')
+			{
 				status = 1;
+			}
 			else
 			{
 				_putchar(c);
@@ -78,33 +86,19 @@ int _printf(const char *format, ...)
 			}
 			else if (c == 'c')
 			{
-				c = va_arg(ap, int);
-				_putchar(c);
+				int_c = va_arg(ap, int);
+				_putchar(int_c);
 				res++;
 			}
 			else if (c == 's')
 			{
 				s = va_arg(ap, char*);
-				c = *s;
-				j = 0;
-				while (c)
-				{
-					_putchar(c);
-					res++;
-					j++;
-					c = *(s + j);
-				}
-			}
-			else if (c == 'd' || c == 'i')
-			{
-				c = va_arg(ap, int);
-				_putchar(c);
-				res++;
+				j = _puts(s);
+				res += j;
 			}
 			status = 0;
 		}
 	}
 	va_end(ap);
-	printf("res: %d\n", res);
 	return (res);
 }
