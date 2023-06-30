@@ -10,7 +10,7 @@
 int _strlen(const char *s)
 {
 	int res;
-	
+
 	while (s[res])
 		res++;
 	return (res);
@@ -53,10 +53,8 @@ int _puts(const char *str)
 */
 int _printf(const char *format, ...)
 {
-	int res, j, status;
+	int res, status, l, i;
 	va_list ap;
-	char c, *s;
-	int l, i, int_c;
 
 	status = 0;
 	l = _strlen(format);
@@ -64,37 +62,31 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 	for (i = 0; i < l; i++)
 	{
-		c = format[i];
 		if (status == 0)
 		{
-			if (c == '%')
-			{
+			if (format[i] == '%')
 				status = 1;
-			}
 			else
 			{
-				_putchar(c);
+				_putchar(format[i]);
 				res++;
 			}
 		}
 		else
 		{
-			if (c == '%')
+			if (format[i] == '%')
 			{
-				_putchar(c);
+				_putchar(format[i]);
 				res++;
 			}
-			else if (c == 'c')
+			else if (format[i] == 'c')
 			{
-				int_c = va_arg(ap, int);
-				_putchar(int_c);
+				_putchar(va_arg(ap, int));
 				res++;
 			}
-			else if (c == 's')
+			else if (format[i] == 's')
 			{
-				s = va_arg(ap, char*);
-				j = _puts(s);
-				res += j;
+				res += _puts(va_arg(ap, char*));
 			}
 			status = 0;
 		}
