@@ -20,7 +20,11 @@ int handle_print(char spec_char, va_list item)
 		{'%', print_modular},
 		{'d', print_digit},
 		{'i', print_digit},
-		{'b', print_binary},		
+		{'b', print_binary},
+		{'u', print_unsigned},
+		{'o', print_octal},
+		{'x', print_hexadecimal_lower},
+		{'X', print_hexadecimal_upper},		
 		{0, NULL}
 	};
 
