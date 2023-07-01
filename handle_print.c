@@ -18,6 +18,8 @@ int handle_print(char spec_char, va_list item)
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_modular},
+		{'d', print_digit},
+		{'i', print_digit},
 		{0, NULL}
 	};
 
