@@ -1,5 +1,21 @@
 #include "main.h"
 
+
+/**
+ * print_num_recurssion - prints an integer recursively
+ * @n: Integer
+ */
+
+void print_num_recurssion(int n)
+{
+	unsigned int num = n;
+
+	if (num / 10)
+		print_num_recurssion(num / 10);
+
+	_putchar('0' + num % 10);
+}
+
 /**
  * print_unsigned - prints an unsigned integer
  * @item: Integer
@@ -15,6 +31,6 @@ int print_unsigned(va_list item)
 		n /= 10,
 		count++;
 
-	print_num_rec(num);
+	print_num_recurssion(num);
 	return (count);
 }
