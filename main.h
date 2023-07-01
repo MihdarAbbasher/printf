@@ -25,5 +25,6 @@ int print_char(va_list item);
 int print_string(va_list item);
 int print_modular(va_list item);
 int print_digit(va_list item);
+int print_binary(va_list item);
 
 #endif

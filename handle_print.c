@@ -20,6 +20,7 @@ int handle_print(char spec_char, va_list item)
 		{'%', print_modular},
 		{'d', print_digit},
 		{'i', print_digit},
+		{'b', print_binary},		
 		{0, NULL}
 	};
 
