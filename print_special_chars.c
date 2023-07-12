@@ -17,7 +17,7 @@ int print_int_as_hex_upper(int c)
 		return (_putchar('0'));
 
 	if (c < 16)
-		_putchar(48);
+		i += _putchar(48);
 	while (c != 0)
 	{
 		temp = c % 16;
@@ -39,7 +39,7 @@ int print_int_as_hex_upper(int c)
 /**
  * print_special_chars - print S str.
  *
- * @args: argument valist.
+ * @args: argument.
  *
  * Return: count of chars.
  */
@@ -61,6 +61,7 @@ int print_special_chars(va_list args)
 		}
 		return (count);
 	}
+	index = 0;
 	while (str[index])
 	{
 		i = str[index];
