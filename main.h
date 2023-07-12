@@ -28,7 +28,9 @@ int print_digit(va_list item);
 int print_binary(va_list item);
 int print_hexadecimal_upper(va_list item);
 int print_hexadecimal_lower(va_list item);
+int print_int_as_hex_upper(int c);
 int print_unsigned(va_list item);
 int print_octal(va_list item);
+int print_special_chars(va_list args);
 
 #endif
