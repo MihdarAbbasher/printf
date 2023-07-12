@@ -39,7 +39,7 @@ int print_int_as_hex_upper(int c)
 /**
  * print_special_chars - print S str.
  *
- * @args: argument.
+ * @args: argument valist.
  *
  * Return: count of chars.
  */
