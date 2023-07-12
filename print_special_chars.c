@@ -28,7 +28,7 @@ int print_int_as_hex_upper(int c)
 	}
 	for (j = i - 1; j >= 0; j--)
 	{
-		if (c < 16)
+		if (arr[j] >= 48 && arr[j] <= 57)
 			i += _putchar(48);
 		_putchar(arr[j]);
 	}
