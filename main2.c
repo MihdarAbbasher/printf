@@ -12,8 +12,13 @@ int main(void)
 {
 	int len, len2;
 
+	/*
 	len = _printf("%S", "\x01\x02\x03\x04\x05\x06\x07");
 	len2 = printf("\\x01\\x02\\x03\\x04\\x05\\x06\\x07");
+	*/
+	len = _printf("%S", "\n");
+	len2 = printf("\\x0A");
+	
 	if (len != len2)
 	{
 		printf("len differ\n");
