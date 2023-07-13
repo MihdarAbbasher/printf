@@ -4,18 +4,20 @@
 
 /**
  * print_int_as_hex_upper - print a
- * @c: int last update
+ * @c: int
  * Return: int
  */
 
 int print_int_as_hex_upper(int c)
 {
-	int  i = 0, j, temp;
+	int  i = 0, j, temp = 0;
 	int arr[128];
 
 	if (c == 0)
 		return (_putchar('0'));
 
+	if (c < 16)
+		i += _putchar(48);
 	while (c != 0)
 	{
 		temp = c % 16;
@@ -28,8 +30,6 @@ int print_int_as_hex_upper(int c)
 	}
 	for (j = i - 1; j >= 0; j--)
 	{
-		if (arr[j] >= 48 && arr[j] <= 57)
-			i += _putchar(48);
 		_putchar(arr[j]);
 	}
 	return (i);
