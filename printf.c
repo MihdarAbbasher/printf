@@ -29,7 +29,9 @@ int _printf(const char *format, ...)
 			}
 			tmp_count += handle_print(format[i + 1], item);
 			if (tmp_count == -1)
-				count = -1;
+				return (-1);
+			else if (tmp_count == 0)
+				count += 0;
 			i++;
 		}
 		else
