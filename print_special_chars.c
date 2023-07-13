@@ -69,11 +69,6 @@ int print_special_chars(va_list args)
 		}
 		return (count);
 	}
-	if (str == "")
-	{
-		printf("str: ''\n");
-		return (0);
-	}
 	index = 0;
 	while (str[index])
 	{
