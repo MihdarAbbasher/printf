@@ -50,10 +50,15 @@ int print_int_as_hex_upper(int c)
 int print_special_chars(va_list args)
 {
 	int count, i, index;
-	char *str;
+	char *str, *str2;
 
 	count = 0;
 	str = va_arg(args, char *);
+	str2 = "";
+	if (*str == *str2)
+	{
+		return (0);
+	}
 	if (!str)
 	{
 		str = "(null)";
@@ -63,6 +68,11 @@ int print_special_chars(va_list args)
 			count++;
 		}
 		return (count);
+	}
+	if (str == "")
+	{
+		printf("str: ''\n");
+		return (0);
 	}
 	index = 0;
 	while (str[index])

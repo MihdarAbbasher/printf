@@ -28,8 +28,6 @@ int _printf(const char *format, ...)
 				break;
 			}
 			tmp_count += handle_print(format[i + 1], item);
-			if (tmp_count == 0)
-				count += _putchar(format[i + 1]);
 			if (tmp_count == -1)
 				count = -1;
 			i++;
